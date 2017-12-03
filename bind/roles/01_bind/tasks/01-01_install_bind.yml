@@ -1,0 +1,7 @@
+- name: 01-01_install_bind - install package
+  yum:
+    name: {{ item.name }}
+    state: present
+  with_items: bind_bind.packages | default("")
+
+- name: 01-01_install_bind - install package
