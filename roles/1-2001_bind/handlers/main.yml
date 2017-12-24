@@ -1,0 +1,5 @@
+---
+- name: restart_named-chroot
+  service:
+    name: named-chroot
+    state: restarted

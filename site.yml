@@ -1,0 +1,6 @@
+---
+- name: 1-2001_bind
+  hosts: 1-2001_bind_GROUP
+  become: yes
+  roles: 
+    - 1-2001_bind
