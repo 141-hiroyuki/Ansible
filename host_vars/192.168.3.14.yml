@@ -4,3 +4,20 @@ bind:
     - name: "bind-chroot.x86_64"
     - name: "bind-libs.x86_64"
     - name: "bind-utils.x86_64"
+  conffile: named.conf.j2
+  confdir: /var/named/chroot/etc/
+  confowner: root
+  confgroup: bind
+  confmode: 755
+  zonefile: stone.conf.j2
+  zonedir: /var/named/chroot/var/named/
+  zoneowner: root
+  zonegroup: bind
+  zonemode: 755
+  revfile: stone.rev.j2
+  acl-name: stone-network
+  acl-segments:
+    - { network: 192.168.3.0/24 }
+	- { network: 192.168.10.0/24 }
+
+
