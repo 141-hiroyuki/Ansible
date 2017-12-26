@@ -1,14 +1,14 @@
 - name: 1-2001-01_install_bind - install package
   yum:
-    name: {{ item.name }}
+    name: "{{ item.name }}"
     state: present
-  with_items: bind_bind.packages | default("")
+  with_items: bind.packages | default("")
 
 - name: 1-2001-01_install_bind - enable services
   service:
-    name: {{ item.name }}
-    state: {{ item.state }}
-    enabled: {{ item.enabled }}
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    enabled: "{{ item.enabled }}"
   with_items:
     - { name: named, enabled: no, state: stopped}
     - { name: named-chroot, enabled: yes, state: started}

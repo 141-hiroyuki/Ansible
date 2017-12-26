@@ -18,6 +18,6 @@ bind:
   acl-name: stone-network
   acl-segments:
     - { network: 192.168.3.0/24 }
-	- { network: 192.168.10.0/24 }
+    - { network: 192.168.10.0/24 }
 
 

@@ -1,6 +1,6 @@
-acl {{ bind_bind.acl-name }} {
+acl "{{ bind_bind.acl-name }}" {
 {% for segment in acl-segments %}
-        {{ segment.network }};
+        "{{ segment.network }}";
 {% endfor %}
 };
 

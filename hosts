@@ -1,2 +1,2 @@
-[1-2001_bind-GROUP]
-192.168.3.14
+[1-2001_bind_GROUP]
+192.168.3.14 ansible_ssh_user=ansible ansible_ssh_pass=ansible
