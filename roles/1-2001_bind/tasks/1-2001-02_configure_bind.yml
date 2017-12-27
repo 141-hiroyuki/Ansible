@@ -1,3 +1,15 @@
+- debug: msg="{{ bind_bind.conffile }}"
+
+- debug: msg="{{ bind_bind.confdir }}"
+
+#- template:
+#    src: "{{ item.src }}"
+#    dest: "{{ item.dest }}"
+#  with_items:
+#    - { src: "{{ bind_bind.conffile }}", dest: "{{ bind_bind.confdir }}"}
+#  notify:
+#    - resart_bind-chroot
+
 - name: 1-2001-02_configure_bind - setting files
   template:
     src: "{{ item.src }}"
@@ -5,12 +17,11 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
-    buckup: yes
+    backup: yes
   with_items:
+#    - { src: "{{ bind_bind.conffile }}", dest: "{{ bind_bind.confdir }}"}
     - { src: "{{ bind_bind.conffile }}", dest: "{{ bind_bind.confdir }}", owner: "{{ bind_bind.confowner }}", group: "{{ bind_bind.confgroup }}", mode: "{{ bind_bind.confmode }}"}
     - { src: "{{ bind_bind.zonefile }}", dest: "{{ bind_bind.zonedir }}", owner: "{{ bind_bind.zoneowner }}", group: "{{ bind_bind.zonegroup }}", mode: "{{ bind_bind.zonemode }}"}
     - { src: "{{ bind_bind.revfile }}", dest: "{{ bind_bind.zonedir }}", owner: "{{ bind_bind.zoneowner }}", group: "{{ bind_bind.zonegroup }}", mode: "{{ bind_bind.zonemode }}"}
   notify:
     - restart_bind-chroot
-
-

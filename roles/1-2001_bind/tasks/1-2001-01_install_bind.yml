@@ -1,8 +1,9 @@
-- name: 1-2001-01_install_bind - install package
+---
+- name: 1-2001-01_install_bind - install pack
   yum:
     name: "{{ item.name }}"
     state: present
-  with_items: bind.packages | default("")
+  with_items: "{{ bind_bind.packs | default(omit) }}"
 
 - name: 1-2001-01_install_bind - enable services
   service:

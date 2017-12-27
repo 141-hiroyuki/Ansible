@@ -1,6 +1,0 @@
----
-- name: bind
-  hosts: bind_GROUP
-  become: yes
-  roles: 
-    - 01_bind

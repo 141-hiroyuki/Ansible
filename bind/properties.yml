@@ -1,6 +1,0 @@
-bind:
-  packages:                                                        # インストールするパッケージ
-    - name: "bind.x86_64"
-    - name: "bind-chroot.x86_64"
-    - name: "bind-libs.x86_64"
-    - name: "bind-utils.x86_64"
