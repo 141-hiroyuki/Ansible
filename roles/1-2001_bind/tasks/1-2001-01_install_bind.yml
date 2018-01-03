@@ -14,6 +14,11 @@
     - { name: named, enabled: no, state: stopped}
     - { name: named-chroot, enabled: yes, state: started}
 
+- name: 1-2001-01_install_bind - stop services
+  service:
+    name: named-chroot
+    state: stopped
+
 - name: 1-2001-01_install_bind - configure firewalld
   firewalld:
     service: dns
