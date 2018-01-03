@@ -1,5 +1,5 @@
 ---
-- name: 1-2001-01_install_bind - install pack
+- name: 1-2001-01_install_bind - install packages
   yum:
     name: "{{ item.name }}"
     state: present
@@ -24,3 +24,5 @@
     service: dns
     permanent: true
     state: enabled
+  notify:
+    - restart_firewalld

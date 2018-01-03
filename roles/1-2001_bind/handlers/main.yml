@@ -3,3 +3,8 @@
   service:
     name: named-chroot
     state: started
+
+- name: restart_firewalld
+  service:
+    name: firewalld
+    state: restarted
